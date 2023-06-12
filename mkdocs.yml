@@ -1,0 +1,13 @@
+site_name: Maze Algorithms
+site_author: "Joshua Ryan-Sprowson" 
+
+theme:
+  name: "material"
+
+plugins:
+  - mkdocstrings
+
+nav:
+  - "index.md"
+  - "mapping.md"
+  - "traversal.md"
