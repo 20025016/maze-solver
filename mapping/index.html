@@ -1,0 +1,400 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Joshua Ryan-Sprowson">
+      
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../traversal/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
+    
+    
+      
+        <title>Mapping - Maze Algorithms</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mapping" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Maze Algorithms" class="md-header__button md-logo" aria-label="Maze Algorithms" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Maze Algorithms
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mapping
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Maze Algorithms" class="md-nav__button md-logo" aria-label="Maze Algorithms" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Maze Algorithms
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Welcome to my Maze Algorithm Solver
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Mapping
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../traversal/" class="md-nav__link">
+        Traversal
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mapping">Mapping</h1>
+<p>In order to utilising the left-hand following algorithm in order to research every single cell on the maze.
+You would need to first setup a Pyamaze maze and call the method "research_maze" and pass the generated maze map
+and provide starting cell of the maze.</p>
+<p>This method will return a list of tuples which will contain each cell
+that the algorithm has mapped.</p>
+<pre><code class="language-python">&quot;&quot;&quot;Solving the maze
+
+Contains functionality to navigate a maze.
+&quot;&quot;&quot;
+
+from typing import Dict, List, Tuple
+
+
+def rotate_agent_clockwise(agent_direction: dict[str, str]) -&gt; Dict:
+    &quot;&quot;&quot;Rotates agent's direction clockwise 90 degrees.
+
+    Args:
+        agent_direction: Direction of the maze agent.
+
+    Returns:
+        An updated agent's direction.
+    &quot;&quot;&quot;
+    keys = list(agent_direction.keys())
+    values = list(agent_direction.values())
+    values_rotated = [values[-1]] + values[:-1]
+    return dict(zip(keys, values_rotated))
+
+
+def rotate_agent_anticlockwise(agent_direction: dict[str, str]) -&gt; Dict:
+    &quot;&quot;&quot;Rotates agent's direction anticlockwise -90 degrees.
+
+    Args:
+        agent_direction: Direction of the maze agent.
+
+    Returns:
+        An updated agent's direction.
+    &quot;&quot;&quot;
+    keys = list(agent_direction.keys())
+    values = list(agent_direction.values())
+    values_rotated = values[1:] + [values[0]]
+    return dict(zip(keys, values_rotated))
+
+
+def move_agent_forward(
+    position: tuple[int, int], direction: dict[str, str]
+) -&gt; Tuple[int, int]:
+    &quot;&quot;&quot;Calculate the position which the agent should visit.
+
+    Args:
+        position: The position of the agent
+        direction: The path options for the agent
+
+    Returns:
+        An updated position which the agent should visit next.
+    &quot;&quot;&quot;
+    forward_direction = direction[&quot;forward&quot;]
+    if forward_direction == &quot;E&quot;:
+        return tuple([position[0], position[1] + 1])
+    if forward_direction == &quot;W&quot;:
+        return tuple([position[0], position[1] - 1])
+    if forward_direction == &quot;N&quot;:
+        return tuple([position[0] - 1, position[1]])
+    if forward_direction == &quot;S&quot;:
+        return tuple([position[0] + 1, position[1]])
+
+    return position
+
+
+def research_maze(
+    maze_map: dict[tuple[int, int], dict[str, str]],
+    start_position: tuple[int, int],
+) -&gt; List:
+    &quot;&quot;&quot;Research the whole maze to find the available paths
+
+    Args:
+        maze_map: Each cells contains information about the status
+            of which path is either opened or closed.
+        start_position: The starting position of the maze.
+
+    Returns:
+        A maze with all its possible cells visited.
+    &quot;&quot;&quot;
+    if len(maze_map) &lt; 1:
+        return []
+
+    agent_direction = {
+        &quot;forward&quot;: &quot;N&quot;,
+        &quot;left&quot;: &quot;W&quot;,
+        &quot;back&quot;: &quot;S&quot;,
+        &quot;right&quot;: &quot;E&quot;,
+    }
+    researched_maze = [start_position]
+
+    agent_position = start_position
+    while True:
+        # removing the starting position from maze map
+        if len(researched_maze) == len(maze_map):
+            break
+
+        if maze_map[agent_position][agent_direction[&quot;left&quot;]] == 0:
+            if maze_map[agent_position][agent_direction[&quot;forward&quot;]] == 0:
+                agent_direction = rotate_agent_clockwise(agent_direction)
+            else:
+                agent_position = move_agent_forward(
+                    agent_position, agent_direction
+                )
+        else:
+            agent_direction = rotate_agent_anticlockwise(agent_direction)
+            agent_position = move_agent_forward(
+                agent_position, agent_direction
+            )
+
+        if agent_position not in researched_maze:
+            researched_maze.append(agent_position)
+
+    return researched_maze
+</code></pre>
+<p>Screenshot of the completed mapping:
+<img alt="Screenshot of mapped maze" src="../mapped_maze.png" /></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
